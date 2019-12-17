@@ -98,50 +98,42 @@
         {
             "text": "$(terminal) 1",
             "command": "workbench.action.terminal.focusAtIndex1",
-            "tooltip": "Focus to terminal #1"
+            "tooltip": "Focus to Terminal #1"
         },
         {
             "text": "$(terminal) 2",
             "command": "workbench.action.terminal.focusAtIndex2",
-            "tooltip": "Focus to terminal #2"
+            "tooltip": "Focus to Terminal #2"
         },
         {
-            "text": "$(arrow-both) UnGroup",
+            "text": "$(diff) DS",
+            "command": "workbench.files.action.compareWithSaved",
+            "tooltip": "Diff with Saved"
+        },
+        {
+            "text": "$(clippy) DC",
+            "command": "workbench.files.action.compareWithClipboard",
+            "tooltip": "Diff with Clipboard"
+        },
+        {
+            "text": "$(arrow-both) JG",
             "command": "workbench.action.joinAllGroups",
-            "tooltip": "Join All Editor Groups"
+            "tooltip": "Join all editor Groups"
         },
         {
-            "text": "$(chevron-down) Panel",
+            "text": "$(chevron-down) PN",
             "command": "workbench.action.togglePanel",
             "tooltip": "Toggle Panel"
         },
         {
-            "text": "$(chevron-right) Sidebar",
+            "text": "$(chevron-right) SB",
             "command": "workbench.action.toggleSidebarVisibility",
             "tooltip": "Toggle Sidebar"
         },
         {
-            "text": "$(screen-full)",
+            "text": "$(screen-full) FS",
             "command": "workbench.action.toggleFullScreen",
             "tooltip": "Toggle FullScreen",
-            "alignment": "right"
-        },
-        {
-            "text": "-",
-            "command": "editor.action.fontZoomOut",
-            "tooltip": "Font Zoom Out",
-            "alignment": "right"
-        },
-        {
-            "text": "+",
-            "command": "editor.action.fontZoomIn",
-            "tooltip": "Font Zoom In",
-            "alignment": "right"
-        },
-        {
-            "text": "$(text-size)",
-            "command": "editor.action.fontZoomReset",
-            "tooltip": "Font Zoom Reset",
             "alignment": "right"
         }
     ]
