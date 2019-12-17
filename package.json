@@ -20,11 +20,11 @@
     "activationEvents": [
         "*"
     ],
-    "icon": "./config/bot-man.jpg",
-    "main": "./out/src/",
+    "icon": "config/bot-man.jpg",
+    "main": "out/src/",
     "contributes": {
         "markdown.previewStyles": [
-            "./config/style.css"
+            "config/style.css"
         ]
     },
     "extensionPack": [
