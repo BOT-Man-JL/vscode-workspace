@@ -1,0 +1,53 @@
+{
+    "name": "workspace",
+    "displayName": "BOT Man's Workspace",
+    "description": "A fast way to setup BOT Man's workspace!",
+    "version": "0.1.0",
+    "publisher": "bot-man",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Extension Packs"
+    ],
+    "keywords": [
+        "botman"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BOT-Man-JL/vscode-workspace.git"
+    },
+    "activationEvents": [
+        "*"
+    ],
+    "icon": "./config/bot-man.jpg",
+    "main": "./out/src/",
+    "contributes": {
+        "markdown.previewStyles": [
+            "./config/style.css"
+        ]
+    },
+    "extensionPack": [
+        "bot-man.vs-keybindings",
+        "vscode-icons-team.vscode-icons",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "npxms.hide-gitignored",
+        "fabiospampinato.vscode-commands"
+    ],
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^12.11.7",
+        "@types/vscode": "^1.41.0",
+        "typescript": "^3.6.4",
+        "tslint": "^5.20.0"
+    }
+}

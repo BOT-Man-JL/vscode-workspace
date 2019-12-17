@@ -1,0 +1,148 @@
+{
+    "window.zoomLevel": 0.5,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "deepIndent",
+    "editor.minimap.enabled": false,
+    "editor.overviewRulerBorder": false,
+    "editor.lineNumbers": "off",
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        80
+    ],
+    "editor.formatOnType": true,
+    "editor.find.autoFindInSelection": "multiline",
+    "editor.suggest.maxVisibleSuggestions": 15,
+    "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.revealDefinition",
+    "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
+    "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.revealDeclaration",
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?·～！￥…（）—【】、；：‘’“”，。《》？",
+    "problems.decorations.enabled": false,
+    "workbench.editor.revealIfOpen": true,
+    "workbench.colorTheme": "Default Light+",
+    "workbench.colorCustomizations": {
+        "editor.background": "#ebebeb",
+        "sideBar.background": "#ebebeb",
+        "panel.background": "#ebebeb",
+        "tab.inactiveBackground": "#f3f3f3",
+        "tab.hoverBackground": "#eeeeee",
+        "editor.selectionBackground": "#0078d780",
+        "editor.selectionHighlightBackground": "#bfcddb80",
+        "editor.lineHighlightBackground": "#bbbbbb44",
+        "scrollbarSlider.background": "#bbbbbb44",
+        "scrollbarSlider.hoverBackground": "#bbbbbb66",
+        "scrollbarSlider.activeBackground": "#bbbbbb88",
+        "sideBar.border": "#bbbbbb",
+        "editorGroup.border": "#bbbbbb"
+    },
+    "workbench.sideBar.location": "right",
+    "search.location": "panel",
+    "search.showLineNumbers": true,
+    "search.quickOpen.includeSymbols": true,
+    "files.autoGuessEncoding": true,
+    "files.simpleDialog.enable": true,
+    "explorer.autoReveal": false,
+    "extensions.ignoreRecommendations": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "remote.SSH.defaultExtensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "npxms.hide-gitignored",
+        "fabiospampinato.vscode-commands"
+    ],
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+        "editor.tabCompletion": "on",
+        "editor.snippetSuggestions": "top"
+    },
+    "markdown.preview.markEditorSelection": false,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "markdown.preview.scrollEditorWithPreview": false,
+    "C_Cpp.default.cppStandard": "c++14",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.clang_format_fallbackStyle": "Chromium",
+    "C_Cpp.workspaceSymbols": "All",
+    "C_Cpp.experimentalFeatures": "Enabled",
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.rulers": [
+            79
+        ]
+    },
+    "python.jediEnabled": false,
+    "python.formatting.autopep8Args": [
+        "--max-line-length=79"
+    ],
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "git-graph.showCurrentBranchByDefault": true,
+    "git-graph.fetchAvatars": true,
+    "git-graph.dateFormat": "Relative",
+    "git-graph.commitDetailsViewLocation": "Docked to Bottom",
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.projectDetection.autoReload": true,
+    "commands.commands": [
+        {
+            "text": "$(terminal) 1",
+            "command": "workbench.action.terminal.focusAtIndex1",
+            "tooltip": "Focus to terminal #1"
+        },
+        {
+            "text": "$(terminal) 2",
+            "command": "workbench.action.terminal.focusAtIndex2",
+            "tooltip": "Focus to terminal #2"
+        },
+        {
+            "text": "$(arrow-both) UnGroup",
+            "command": "workbench.action.joinAllGroups",
+            "tooltip": "Join All Editor Groups"
+        },
+        {
+            "text": "$(chevron-down) Panel",
+            "command": "workbench.action.togglePanel",
+            "tooltip": "Toggle Panel"
+        },
+        {
+            "text": "$(chevron-right) Sidebar",
+            "command": "workbench.action.toggleSidebarVisibility",
+            "tooltip": "Toggle Sidebar"
+        },
+        {
+            "text": "$(screen-full)",
+            "command": "workbench.action.toggleFullScreen",
+            "tooltip": "Toggle FullScreen",
+            "alignment": "right"
+        },
+        {
+            "text": "-",
+            "command": "editor.action.fontZoomOut",
+            "tooltip": "Font Zoom Out",
+            "alignment": "right"
+        },
+        {
+            "text": "+",
+            "command": "editor.action.fontZoomIn",
+            "tooltip": "Font Zoom In",
+            "alignment": "right"
+        },
+        {
+            "text": "$(text-size)",
+            "command": "editor.action.fontZoomReset",
+            "tooltip": "Font Zoom Reset",
+            "alignment": "right"
+        }
+    ]
+}
