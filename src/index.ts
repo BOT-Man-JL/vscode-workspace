@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import * as default_config from '../config/settings.json';
 import * as manifest from '../package.json';
+import * as path from 'path';
 
 function isObject(value: any): boolean {
   return value !== null && typeof value === 'object';
@@ -11,7 +12,7 @@ function logging(...args: any[]): void {
     ...args);
 }
 
-export function activate() {
+function tryUpdateSettings() {
   const config = vscode.workspace.getConfiguration();
   const config_diff = Object.entries(default_config).filter(([key, value]) => {
     const c_value = config.get(key);
@@ -44,21 +45,47 @@ export function activate() {
         cancellable: false
       }, (progress, _) => {
         const finish_keys: Array<String> = [];
-        return Promise.all(config_diff.map(([key, value]) =>
-          config.update(key, value, vscode.ConfigurationTarget.Global)
-            .then(() => {
-              finish_keys.unshift(key);
-              logging('Updated', key, ':', value);
-              progress.report({
-                increment: 100 * finish_keys.length / config_diff.length,
-                message: `(${finish_keys.length}/${config_diff.length})` +
-                  ` ${finish_keys.join(', ')}`,
-              });
-            })));
+        return Promise.all(config_diff.map(async ([key, value]) => {
+          logging('Updating', key, ':', value);
+          await config.update(key, value, vscode.ConfigurationTarget.Global);
+
+          finish_keys.unshift(key);
+          progress.report({
+            increment: 100 * finish_keys.length / config_diff.length,
+            message: `(${finish_keys.length}/${config_diff.length})` +
+              ` ${finish_keys.join(', ')}`,
+          });
+        }));
       });
     })
     .then(() => {
       logging('Updated all settings.');
-      vscode.window.showInformationMessage('Updated all settings.');
     });
+}
+
+export function activate(context: vscode.ExtensionContext) {
+  tryUpdateSettings();
+
+  const cmd0 = manifest.contributes.commands[0].command;
+  context.subscriptions.push(vscode.commands.registerCommand(cmd0, async () => {
+    logging(`Cmd: ${cmd0}`);
+    await Promise.all([
+      'workbench.action.joinAllGroups',
+      'workbench.action.closePanel',
+      'workbench.action.maximizeEditor',
+    ].map(id => vscode.commands.executeCommand(id)));
+  }));
+  logging(`Registered ${cmd0}`);
+
+  const cmd1 = manifest.contributes.commands[1].command;
+  context.subscriptions.push(vscode.commands.registerCommand(cmd1, async () => {
+    logging(`Cmd: ${cmd1}`);
+    await vscode.commands.executeCommand('workbench.action.openSettingsJson');
+
+    const base_path = path.resolve(__dirname, '../config/settings.json');
+    const target_uri = vscode.window.activeTextEditor?.document.uri;
+    await vscode.commands.executeCommand('vscode.diff',
+      vscode.Uri.file(base_path), target_uri, 'DiffSettings');
+  }));
+  logging(`Registered ${cmd1}`);
 }

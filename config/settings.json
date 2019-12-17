@@ -106,29 +106,19 @@
             "tooltip": "Focus to Terminal #2"
         },
         {
-            "text": "$(diff) DS",
+            "text": "$(diff) S",
             "command": "workbench.files.action.compareWithSaved",
             "tooltip": "Diff with Saved"
         },
         {
-            "text": "$(clippy) DC",
+            "text": "$(clippy) C",
             "command": "workbench.files.action.compareWithClipboard",
             "tooltip": "Diff with Clipboard"
         },
         {
-            "text": "$(arrow-both) JG",
-            "command": "workbench.action.joinAllGroups",
-            "tooltip": "Join all editor Groups"
-        },
-        {
-            "text": "$(chevron-down) PN",
-            "command": "workbench.action.togglePanel",
-            "tooltip": "Toggle Panel"
-        },
-        {
-            "text": "$(chevron-right) SB",
-            "command": "workbench.action.toggleSidebarVisibility",
-            "tooltip": "Toggle Sidebar"
+            "text": "$(link-external) Max",
+            "command": "botman.maximizeEditor",
+            "tooltip": "Close/Hide Panel and Sidebar, and UnGroup Editors"
         },
         {
             "text": "$(screen-full) FS",
