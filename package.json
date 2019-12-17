@@ -2,7 +2,7 @@
     "name": "workspace",
     "displayName": "BOT Man's Workspace",
     "description": "A fast way to setup BOT Man's workspace!",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "bot-man",
     "engines": {
         "vscode": "^1.41.0"

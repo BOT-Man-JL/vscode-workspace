@@ -38,11 +38,27 @@ export function activate() {
         logging('Skip: user canceled.');
         return;
       }
-      config_diff.forEach(([key, value]) => {
-        config.update(key, value, vscode.ConfigurationTarget.Global);
-        logging('Update: ', key);
+      return vscode.window.withProgress({
+        location: vscode.ProgressLocation.Notification,
+        title: 'Updating settings...',
+        cancellable: false
+      }, (progress, _) => {
+        const finish_keys: Array<String> = [];
+        return Promise.all(config_diff.map(([key, value]) =>
+          config.update(key, value, vscode.ConfigurationTarget.Global)
+            .then(() => {
+              finish_keys.unshift(key);
+              logging('Updated', key, ':', value);
+              progress.report({
+                increment: 100 * finish_keys.length / config_diff.length,
+                message: `(${finish_keys.length}/${config_diff.length})` +
+                  ` ${finish_keys.join(', ')}`,
+              });
+            })));
       });
+    })
+    .then(() => {
+      logging('Updated all settings.');
+      vscode.window.showInformationMessage('Updated all settings.');
     });
 }
-
-export function deactivate() { }
