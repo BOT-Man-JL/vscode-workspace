@@ -47,13 +47,7 @@
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "remote.SSH.defaultExtensions": [
-        "ms-vscode.cpptools",
-        "ms-python.python",
-        "VisualStudioExptTeam.vscodeintellicode",
-        "eamodio.gitlens",
-        "mhutchie.git-graph",
-        "npxms.hide-gitignored",
-        "fabiospampinato.vscode-commands"
+        "bot-man.workspace"
     ],
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
     "[markdown]": {
