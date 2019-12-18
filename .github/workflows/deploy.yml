@@ -21,9 +21,7 @@ jobs:
       env:
         TOKEN: ${{ secrets.TOKEN }}
       run: |
-        git config user.name fake
-        git config user.email fake@fake.com
-        git commit -m "Set latest version"
+        rm -r .git
         npm install
         npm install -g vsce
         vsce publish patch -p $TOKEN
