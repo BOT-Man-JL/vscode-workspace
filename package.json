@@ -32,7 +32,7 @@
             {
                 "command": "botman.diffSettings",
                 "category": "BOT Man",
-                "title": "Inspect settings changes"
+                "title": "Inspect/Diff setting changes"
             }
         ],
         "keybindings": [

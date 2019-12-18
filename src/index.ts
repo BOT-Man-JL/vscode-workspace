@@ -12,6 +12,9 @@ function logging(...args: any[]): void {
     ...args);
 }
 
+const cmdMaxEditor = manifest.contributes.commands[0].command;
+const cmdDiffSettings = manifest.contributes.commands[1].command;
+
 function tryUpdateSettings() {
   const config = vscode.workspace.getConfiguration();
   const config_diff = Object.entries(default_config).filter(([key, value]) => {
@@ -33,8 +36,12 @@ function tryUpdateSettings() {
 
   vscode.window.showWarningMessage(
     'Wanna update: ' + config_diff.map(([key, _]) => key).join(', ') + ' ?',
-    'Yes', 'No')
+    'Yes', 'No', 'Diff')
     .then((ans) => {
+      if (ans === 'Diff') {
+        logging('Skip: inspect diff.');
+        vscode.commands.executeCommand(cmdDiffSettings);
+      }
       if (ans !== 'Yes') {
         logging('Skip: user canceled.');
         return;
@@ -64,28 +71,28 @@ function tryUpdateSettings() {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+  context.subscriptions.push(
+    vscode.commands.registerCommand(cmdMaxEditor, async () => {
+      logging(`Cmd: ${cmdMaxEditor}`);
+      await Promise.all([
+        'workbench.action.joinAllGroups',
+        'workbench.action.closePanel',
+        'workbench.action.maximizeEditor',
+      ].map(id => vscode.commands.executeCommand(id)));
+    }));
+  logging(`Registered ${cmdMaxEditor}`);
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand(cmdDiffSettings, async () => {
+      logging(`Cmd: ${cmdDiffSettings}`);
+      await vscode.commands.executeCommand('workbench.action.openSettingsJson');
+
+      const base_path = path.resolve(__dirname, '../config/settings.json');
+      const target_uri = vscode.window.activeTextEditor?.document.uri;
+      await vscode.commands.executeCommand('vscode.diff',
+        vscode.Uri.file(base_path), target_uri, 'DiffSettings');
+    }));
+  logging(`Registered ${cmdDiffSettings}`);
+
   tryUpdateSettings();
-
-  const cmd0 = manifest.contributes.commands[0].command;
-  context.subscriptions.push(vscode.commands.registerCommand(cmd0, async () => {
-    logging(`Cmd: ${cmd0}`);
-    await Promise.all([
-      'workbench.action.joinAllGroups',
-      'workbench.action.closePanel',
-      'workbench.action.maximizeEditor',
-    ].map(id => vscode.commands.executeCommand(id)));
-  }));
-  logging(`Registered ${cmd0}`);
-
-  const cmd1 = manifest.contributes.commands[1].command;
-  context.subscriptions.push(vscode.commands.registerCommand(cmd1, async () => {
-    logging(`Cmd: ${cmd1}`);
-    await vscode.commands.executeCommand('workbench.action.openSettingsJson');
-
-    const base_path = path.resolve(__dirname, '../config/settings.json');
-    const target_uri = vscode.window.activeTextEditor?.document.uri;
-    await vscode.commands.executeCommand('vscode.diff',
-      vscode.Uri.file(base_path), target_uri, 'DiffSettings');
-  }));
-  logging(`Registered ${cmd1}`);
 }
