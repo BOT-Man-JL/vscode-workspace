@@ -12,7 +12,7 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - name: Set lastest version
+    - name: Set latest version
       run: |
         export VERSION=`curl https://marketplace.visualstudio.com/items?itemName=bot-man.workspace | grep '"Version":' | sed 's/^.*"Version":"\([^"]*\)".*$/\1/g'`
         echo Set current version to "$VERSION"
@@ -21,8 +21,9 @@ jobs:
       env:
         TOKEN: ${{ secrets.TOKEN }}
       run: |
-        npm install
         git config user.name fake
         git config user.email fake@fake.com
+        git commit -m "Set latest version"
+        npm install
         npm install -g vsce
         vsce publish patch -p $TOKEN
