@@ -12,12 +12,17 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - name: Install vsce
+    - name: Set lastest version
       run: |
-        npm install -g vsce
-    - name: Package and Publish
+        export VERSION=`curl https://marketplace.visualstudio.com/items?itemName=bot-man.workspace | grep '"Version":' | sed 's/^.*"Version":"\([^"]*\)".*$/\1/g'`
+        echo Set current version to "$VERSION"
+        sed -i 's/"version": "[^"]*"/"version": "'"$VERSION"'"/g' package.json
+    - name: Publish a new version
       env:
         TOKEN: ${{ secrets.TOKEN }}
       run: |
         npm install
-        vsce publish -p $TOKEN
+        git config user.name fake
+        git config user.email fake@fake.com
+        npm install -g vsce
+        vsce publish patch -p $TOKEN
