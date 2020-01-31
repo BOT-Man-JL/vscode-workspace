@@ -62,7 +62,7 @@
     "markdown.preview.markEditorSelection": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.scrollEditorWithPreview": false,
-    "C_Cpp.default.cppStandard": "c++14",
+    "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.clang_format_fallbackStyle": "Chromium",
     "C_Cpp.workspaceSymbols": "All",
