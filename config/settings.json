@@ -36,7 +36,6 @@
         "editorGroup.border": "#bbbbbb"
     },
     "workbench.sideBar.location": "right",
-    "search.location": "panel",
     "search.showLineNumbers": true,
     "search.quickOpen.includeSymbols": true,
     "files.autoGuessEncoding": true,
