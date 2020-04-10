@@ -39,6 +39,11 @@
             {
                 "command": "botman.maximizeEditor",
                 "key": "ctrl+b"
+            },
+            {
+                "key": "ctrl+shift+alt+.",
+                "command": "editor.action.moveSelectionToPreviousFindMatch",
+                "when": "editorFocus"
             }
         ],
         "markdown.previewStyles": [
