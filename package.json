@@ -44,6 +44,11 @@
                 "key": "ctrl+shift+alt+.",
                 "command": "editor.action.moveSelectionToPreviousFindMatch",
                 "when": "editorFocus"
+            },
+            {
+                "key": "ctrl+s",
+                "command": "searchEditorApplyChanges.apply",
+                "when": "inSearchEditor"
             }
         ],
         "markdown.previewStyles": [
@@ -60,7 +65,8 @@
         "eamodio.gitlens",
         "mhutchie.git-graph",
         "npxms.hide-gitignored",
-        "fabiospampinato.vscode-commands"
+        "fabiospampinato.vscode-commands",
+        "jakearl.search-editor-apply-changes"
     ],
     "scripts": {
         "vscode:prepublish": "npm run compile",
