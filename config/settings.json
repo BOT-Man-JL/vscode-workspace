@@ -17,6 +17,7 @@
     "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
     "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.revealDeclaration",
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?·～！￥…（）—【】、；：‘’“”，。《》？",
+    "problems.decorations.enabled": false,
     "workbench.editor.revealIfOpen": true,
     "workbench.colorTheme": "Default Light+",
     "workbench.colorCustomizations": {
