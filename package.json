@@ -66,7 +66,8 @@
         "mhutchie.git-graph",
         "npxms.hide-gitignored",
         "fabiospampinato.vscode-commands",
-        "jakearl.search-editor-apply-changes"
+        "jakearl.search-editor-apply-changes",
+        "sirmspencer.vscode-autohide"
     ],
     "scripts": {
         "vscode:prepublish": "npm run compile",
