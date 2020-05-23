@@ -12,8 +12,7 @@ function logging(...args: any[]): void {
     ...args);
 }
 
-const cmdMaxEditor = manifest.contributes.commands[0].command;
-const cmdDiffSettings = manifest.contributes.commands[1].command;
+const cmdDiffSettings = manifest.contributes.commands[0].command;
 
 function tryUpdateSettings() {
   const config = vscode.workspace.getConfiguration();
@@ -71,17 +70,6 @@ function tryUpdateSettings() {
 }
 
 export function activate(context: vscode.ExtensionContext) {
-  context.subscriptions.push(
-    vscode.commands.registerCommand(cmdMaxEditor, async () => {
-      logging(`Cmd: ${cmdMaxEditor}`);
-      await Promise.all([
-        'workbench.action.joinAllGroups',
-        'workbench.action.closePanel',
-        'workbench.action.maximizeEditor',
-      ].map(id => vscode.commands.executeCommand(id)));
-    }));
-  logging(`Registered ${cmdMaxEditor}`);
-
   context.subscriptions.push(
     vscode.commands.registerCommand(cmdDiffSettings, async () => {
       logging(`Cmd: ${cmdDiffSettings}`);

@@ -5,7 +5,7 @@
     "version": "0.1.0",
     "publisher": "bot-man",
     "engines": {
-        "vscode": "^1.41.0"
+        "vscode": "^1.43.0"
     },
     "categories": [
         "Extension Packs"
@@ -25,11 +25,6 @@
     "contributes": {
         "commands": [
             {
-                "command": "botman.maximizeEditor",
-                "category": "BOT Man",
-                "title": "Close/Hide Panel and Sidebar, and UnGroup Editors"
-            },
-            {
                 "command": "botman.diffSettings",
                 "category": "BOT Man",
                 "title": "Inspect/Diff setting changes"
@@ -37,8 +32,9 @@
         ],
         "keybindings": [
             {
-                "command": "botman.maximizeEditor",
-                "key": "ctrl+b"
+                "key": "ctrl+b",
+                "command": "workbench.action.joinAllGroups",
+                "when": "editorFocus"
             },
             {
                 "key": "ctrl+shift+alt+.",
