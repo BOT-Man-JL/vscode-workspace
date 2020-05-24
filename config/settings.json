@@ -108,9 +108,9 @@
             "tooltip": "Diff with Clipboard"
         },
         {
-            "text": "$(screen-full) FS",
-            "command": "workbench.action.toggleFullScreen",
-            "tooltip": "Toggle FullScreen",
+            "text": "$(refresh) R",
+            "command": "workbench.action.reloadWindow",
+            "tooltip": "Reload Window",
             "alignment": "right"
         }
     ]
