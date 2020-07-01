@@ -70,7 +70,7 @@
             79
         ]
     },
-    "python.jediEnabled": false,
+    "python.languageServer": "Microsoft",
     "python.formatting.autopep8Args": [
         "--max-line-length=79"
     ],
@@ -106,6 +106,16 @@
             "text": "$(clippy) C",
             "command": "workbench.files.action.compareWithClipboard",
             "tooltip": "Diff with Clipboard"
+        },
+        {
+            "text": "$(pin) P",
+            "command": "autoHide.toggleHidePanel",
+            "tooltip": "Pin/Unpin Panel"
+        },
+        {
+            "text": "$(pin) S",
+            "command": "autoHide.toggleHideSideBar",
+            "tooltip": "Pin/Unpin Sidebar"
         },
         {
             "text": "$(refresh) R",
