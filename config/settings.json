@@ -12,7 +12,6 @@
     ],
     "editor.formatOnType": true,
     "editor.find.autoFindInSelection": "multiline",
-    "editor.suggest.maxVisibleSuggestions": 15,
     "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.revealDefinition",
     "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
     "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.revealDeclaration",
@@ -70,7 +69,7 @@
             79
         ]
     },
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Pylance",
     "python.formatting.autopep8Args": [
         "--max-line-length=79"
     ],
@@ -79,10 +78,6 @@
     "gitlens.codeLens.enabled": false,
     "gitlens.statusBar.enabled": false,
     "gitlens.currentLine.enabled": false,
-    "git-graph.showCurrentBranchByDefault": true,
-    "git-graph.fetchAvatars": true,
-    "git-graph.dateFormat": "Relative",
-    "git-graph.commitDetailsViewLocation": "Docked to Bottom",
     "workbench.iconTheme": "vscode-icons",
     "vsicons.dontShowNewVersionMessage": true,
     "vsicons.projectDetection.autoReload": true,
