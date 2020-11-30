@@ -57,6 +57,7 @@
         "ms-vscode-remote.vscode-remote-extensionpack",
         "ms-vscode.cpptools",
         "ms-python.python",
+        "ms-python.vscode-pylance",
         "ms-vscode.hexeditor",
         "VisualStudioExptTeam.vscodeintellicode",
         "eamodio.gitlens",
