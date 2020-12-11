@@ -5,7 +5,7 @@
     "version": "0.1.0",
     "publisher": "bot-man",
     "engines": {
-        "vscode": "^1.43.0"
+        "vscode": "^1.51.0"
     },
     "categories": [
         "Extension Packs"
@@ -33,16 +33,19 @@
         "keybindings": [
             {
                 "key": "ctrl+b",
+                "mac": "cmd+b",
                 "command": "workbench.action.joinAllGroups",
                 "when": "editorFocus"
             },
             {
                 "key": "ctrl+shift+alt+.",
+                "mac": "cmd+shift+alt+.",
                 "command": "editor.action.moveSelectionToPreviousFindMatch",
                 "when": "editorFocus"
             },
             {
                 "key": "ctrl+s",
+                "mac": "cmd+s",
                 "command": "searchEditorApplyChanges.apply",
                 "when": "inSearchEditor"
             }
