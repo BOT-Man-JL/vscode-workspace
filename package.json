@@ -59,6 +59,8 @@
         "vscode-icons-team.vscode-icons",
         "ms-vscode-remote.vscode-remote-extensionpack",
         "ms-vscode.cpptools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "mine.cpplint",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-vscode.hexeditor",
