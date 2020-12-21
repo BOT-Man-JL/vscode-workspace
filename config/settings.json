@@ -60,9 +60,18 @@
     "markdown.preview.markEditorSelection": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.scrollEditorWithPreview": false,
-    "C_Cpp.clang_format_fallbackStyle": "Chromium",
-    "C_Cpp.workspaceSymbols": "All",
-    "C_Cpp.experimentalFeatures": "Enabled",
+    "clangd.arguments": [
+        "-j=8",
+        "--background-index",
+        "--clang-tidy",
+        "--cross-file-rename",
+        "--fallback-style=Chromium",
+        "--header-insertion=iwyu",
+        "--header-insertion-decorators",
+        "--recovery-ast",
+        "--suggest-missing-includes"
+    ],
+    "C_Cpp.intelliSenseEngine": "Disabled",
     "[python]": {
         "editor.tabSize": 4,
         "editor.rulers": [
