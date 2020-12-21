@@ -57,7 +57,6 @@
     "extensionPack": [
         "bot-man.vs-keybindings",
         "vscode-icons-team.vscode-icons",
-        "ms-vscode-remote.vscode-remote-extensionpack",
         "ms-vscode.cpptools",
         "llvm-vs-code-extensions.vscode-clangd",
         "mine.cpplint",
