@@ -44,9 +44,6 @@
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
-    "remote.SSH.defaultExtensions": [
-        "bot-man.workspace"
-    ],
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
     "[markdown]": {
         "editor.quickSuggestions": {
