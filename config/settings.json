@@ -58,13 +58,15 @@
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.scrollEditorWithPreview": false,
     "clangd.arguments": [
-        "-j=8",
+        "--all-scopes-completion",
         "--background-index",
         "--clang-tidy",
+        "--completion-style=detailed",
         "--cross-file-rename",
         "--fallback-style=Chromium",
         "--header-insertion=iwyu",
         "--header-insertion-decorators",
+        "--log=info",
         "--recovery-ast",
         "--suggest-missing-includes"
     ],
