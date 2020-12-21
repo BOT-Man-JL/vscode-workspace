@@ -58,17 +58,11 @@
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.scrollEditorWithPreview": false,
     "clangd.arguments": [
-        "--all-scopes-completion",
-        "--background-index",
-        "--clang-tidy",
-        "--completion-style=detailed",
-        "--cross-file-rename",
         "--fallback-style=Chromium",
-        "--header-insertion=iwyu",
-        "--header-insertion-decorators",
-        "--log=info",
-        "--recovery-ast",
-        "--suggest-missing-includes"
+        "--function-arg-placeholders=false",
+        "--include-ineligible-results=true",
+        "--recovery-ast=true",
+        "--recovery-ast-type=true"
     ],
     "C_Cpp.intelliSenseEngine": "Disabled",
     "[python]": {
