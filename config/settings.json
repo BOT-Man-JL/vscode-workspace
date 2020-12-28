@@ -57,6 +57,10 @@
     "markdown.preview.markEditorSelection": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.scrollEditorWithPreview": false,
+    "C_Cpp.clang_format_fallbackStyle": "Chromium",
+    "C_Cpp.experimentalFeatures": "Enabled",
+    "C_Cpp.workspaceSymbols": "All",
+    // "C_Cpp.intelliSenseEngine": "Disabled",
     "clangd.arguments": [
         "--fallback-style=Chromium",
         "--function-arg-placeholders=false",
@@ -64,7 +68,7 @@
         "--recovery-ast=true",
         "--recovery-ast-type=true"
     ],
-    "C_Cpp.intelliSenseEngine": "Disabled",
+    "clangd.onConfigChanged": "restart",
     "[python]": {
         "editor.tabSize": 4,
         "editor.rulers": [
