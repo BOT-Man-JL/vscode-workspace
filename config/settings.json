@@ -60,7 +60,6 @@
     "C_Cpp.clang_format_fallbackStyle": "Chromium",
     "C_Cpp.experimentalFeatures": "Enabled",
     "C_Cpp.workspaceSymbols": "All",
-    // "C_Cpp.intelliSenseEngine": "Disabled",
     "clangd.arguments": [
         "--fallback-style=Chromium",
         "--function-arg-placeholders=false",
