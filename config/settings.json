@@ -88,16 +88,6 @@
     "vsicons.projectDetection.autoReload": true,
     "commands.commands": [
         {
-            "text": "$(terminal) 1",
-            "command": "workbench.action.terminal.focusAtIndex1",
-            "tooltip": "Focus to Terminal #1"
-        },
-        {
-            "text": "$(terminal) 2",
-            "command": "workbench.action.terminal.focusAtIndex2",
-            "tooltip": "Focus to Terminal #2"
-        },
-        {
             "text": "$(diff) S",
             "command": "workbench.files.action.compareWithSaved",
             "tooltip": "Diff with Saved"
