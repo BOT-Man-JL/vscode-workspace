@@ -44,6 +44,9 @@
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
+    "git.pruneOnFetch": true,
+    "git-graph.repository.fetchAndPrune": true,
+    "git-graph.repository.fetchAndPruneTags": true,
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
     "[markdown]": {
         "editor.quickSuggestions": {
