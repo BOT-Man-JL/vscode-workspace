@@ -11,6 +11,8 @@
         80
     ],
     "editor.formatOnType": true,
+    "editor.suggest.preview": true,
+    "editor.bracketPairColorization.enabled": true,
     "editor.find.autoFindInSelection": "multiline",
     "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.revealDefinition",
     "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
@@ -47,7 +49,7 @@
     "git.pruneOnFetch": true,
     "git-graph.repository.fetchAndPrune": true,
     "git-graph.repository.fetchAndPruneTags": true,
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "[markdown]": {
         "editor.quickSuggestions": {
             "other": true,
