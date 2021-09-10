@@ -50,6 +50,7 @@
     "git-graph.repository.fetchAndPrune": true,
     "git-graph.repository.fetchAndPruneTags": true,
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.automationShell.windows": "cmd.exe",
     "[markdown]": {
         "editor.quickSuggestions": {
             "other": true,
