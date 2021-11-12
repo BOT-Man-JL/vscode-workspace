@@ -13,6 +13,7 @@
     "editor.formatOnType": true,
     "editor.suggest.preview": true,
     "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
     "editor.find.autoFindInSelection": "multiline",
     "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.revealDefinition",
     "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
