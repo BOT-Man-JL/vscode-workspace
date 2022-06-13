@@ -12,6 +12,7 @@
     ],
     "editor.formatOnType": true,
     "editor.suggest.preview": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.guides.bracketPairs": "active",
     "editor.find.autoFindInSelection": "multiline",
     "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.revealDefinition",
