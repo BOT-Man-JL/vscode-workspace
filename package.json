@@ -21,7 +21,7 @@
         "*"
     ],
     "icon": "config/bot-man.jpg",
-    "main": "out/src/",
+    "main": "out/src/index.js",
     "contributes": {
         "commands": [
             {
