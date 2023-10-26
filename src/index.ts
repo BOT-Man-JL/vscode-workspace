@@ -3,70 +3,77 @@ import * as default_config from '../config/settings.json';
 import * as manifest from '../package.json';
 import * as path from 'path';
 
-function isObject(value: any): boolean {
+function isObject(value: any) {
   return value !== null && typeof value === 'object';
 }
 
-function logging(...args: any[]): void {
+function logging(...args: any[]) {
   console.log(`[${manifest.publisher}.${manifest.name}-${manifest.version}]`,
     ...args);
 }
 
 const cmdDiffSettings = manifest.contributes.commands[0].command;
 
-function tryUpdateSettings() {
-  const config = vscode.workspace.getConfiguration();
-  const config_diff = Object.entries(default_config).filter(([key, value]) => {
-    const c_value = config.get(key);
-    if (Array.isArray(c_value) && Array.isArray(value)) {
-      const strs = (c_value as Array<any>).map(v => JSON.stringify(v));
-      return (value as Array<any>).some(v => !strs.includes(JSON.stringify(v)));
-    }
-    if (isObject(c_value) && isObject(value)) {
-      value = Object.assign({}, c_value, value);
-    }
-    return JSON.stringify(value) !== JSON.stringify(c_value);
-  });
+function checkContains(object1: any, object2: any): boolean {
+  if (Array.isArray(object1) && Array.isArray(object2)) {
+    return (object2 as any[]).every(
+      item2 => (object1 as any[]).some(
+        item1 => checkContains(item1, item2)
+      )
+    );
+  }
+  if (isObject(object1) && isObject(object2)) {
+    return Object.entries(object2).every(
+      ([key2, value2]) => checkContains(object1[key2], value2)
+    );
+  }
+  return object1 == object2;
+}
 
+async function tryUpdateSettings() {
+  const current_config = vscode.workspace.getConfiguration();
+  const config_diff = Object.entries(default_config).filter(
+    ([key, value]) => !checkContains(current_config.get(key), value)
+  );
   if (!config_diff.length) {
     logging('Skip: nothing to update.');
     return;
   }
 
-  vscode.window.showWarningMessage(
-    'Wanna update: ' + config_diff.map(([key, _]) => key).join(', ') + ' ?',
-    'Yes', 'No', 'Diff')
-    .then((ans) => {
-      if (ans === 'Diff') {
-        logging('Skip: inspect diff.');
-        vscode.commands.executeCommand(cmdDiffSettings);
-      }
-      if (ans !== 'Yes') {
-        logging('Skip: user canceled.');
-        return;
-      }
-      return vscode.window.withProgress({
-        location: vscode.ProgressLocation.Notification,
-        title: 'Updating settings...',
-        cancellable: false
-      }, (progress, _) => {
-        const finish_keys: Array<String> = [];
-        return Promise.all(config_diff.map(async ([key, value]) => {
-          logging('Updating', key, ':', value);
-          await config.update(key, value, vscode.ConfigurationTarget.Global);
+  const ans = await vscode.window.showWarningMessage(
+    'Wanna update: ' + config_diff.map(([key]) => key).join(', ') + ' ?',
+    'Yes', 'No', 'Diff');
+  if (ans === 'Diff') {
+    logging('Skip: inspect diff.');
+    vscode.commands.executeCommand(cmdDiffSettings);
+    return;
+  }
+  if (ans === 'No') {
+    logging('Skip: user canceled.');
+    return;
+  }
 
-          finish_keys.unshift(key);
-          progress.report({
-            increment: 100 * finish_keys.length / config_diff.length,
-            message: `(${finish_keys.length}/${config_diff.length})` +
-              ` ${finish_keys.join(', ')}`,
-          });
-        }));
+  await vscode.window.withProgress({
+    location: vscode.ProgressLocation.Notification,
+    title: 'Updating settings...',
+    cancellable: false
+  }, (progress) => {
+    const finish_keys: Array<String> = [];
+    return Promise.all(config_diff.map(async ([key, value]) => {
+      logging('Updating', key, ':', value);
+      try {
+        await current_config.update(key, value, vscode.ConfigurationTarget.Global);
+      } catch (error) {}
+
+      finish_keys.unshift(key);
+      progress.report({
+        increment: 100 * finish_keys.length / config_diff.length,
+        message: `(${finish_keys.length}/${config_diff.length})` +
+          ` ${finish_keys.join(', ')}`,
       });
-    })
-    .then(() => {
-      logging('Updated all settings.');
-    });
+    }));
+  });
+  logging('Updated all settings.');
 }
 
 export function activate(context: vscode.ExtensionContext) {

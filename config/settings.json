@@ -1,10 +1,12 @@
 {
     "window.zoomLevel": 0.5,
+    "editor.fontSize": 17,
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
     "editor.wrappingIndent": "deepIndent",
     "editor.minimap.enabled": false,
     "editor.overviewRulerBorder": false,
+    "editor.stickyScroll.enabled": true,
     "editor.lineNumbers": "off",
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
@@ -19,7 +21,6 @@
     "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
     "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.revealDeclaration",
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?·～！￥…（）—【】、；：‘’“”，。《》？",
-    "problems.decorations.enabled": false,
     "workbench.editor.revealIfOpen": true,
     "workbench.colorTheme": "Default Light+",
     "workbench.colorCustomizations": {
@@ -40,18 +41,24 @@
     "workbench.sideBar.location": "right",
     "search.showLineNumbers": true,
     "search.quickOpen.includeSymbols": true,
+    "search.searchEditor.doubleClickBehaviour": "selectWord",
+    "search.searchEditor.reusePriorSearchConfiguration": true,
     "files.autoGuessEncoding": true,
     "files.simpleDialog.enable": true,
     "explorer.autoReveal": false,
+    "debug.toolBarLocation": "docked",
+    "problems.decorations.enabled": false,
     "extensions.ignoreRecommendations": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "git.autofetch": true,
     "git.confirmSync": false,
+    "git.rebaseWhenSync": true,
     "git.enableSmartCommit": true,
     "git.pruneOnFetch": true,
+    "git.mergeEditor": true,
     "git-graph.repository.fetchAndPrune": true,
     "git-graph.repository.fetchAndPruneTags": true,
-    "terminal.integrated.defaultProfile.windows": "Command Prompt",
-    "terminal.integrated.automationShell.windows": "cmd.exe",
     "[markdown]": {
         "editor.quickSuggestions": {
             "other": true,
@@ -64,8 +71,12 @@
     "markdown.preview.markEditorSelection": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.validate.enabled": true,
+    "markdown.occurrencesHighlight.enabled": true,
+    "markdown.updateLinksOnFileMove.enabled": "prompt",
+    "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
     "C_Cpp.clang_format_fallbackStyle": "Chromium",
-    "C_Cpp.experimentalFeatures": "Enabled",
+    "C_Cpp.experimentalFeatures": "enabled",
     "C_Cpp.workspaceSymbols": "All",
     "clangd.arguments": [
         "--fallback-style=Chromium",
@@ -81,10 +92,6 @@
             79
         ]
     },
-    "python.languageServer": "Pylance",
-    "python.formatting.autopep8Args": [
-        "--max-line-length=79"
-    ],
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "gitlens.codeLens.enabled": false,
