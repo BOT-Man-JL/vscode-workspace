@@ -52,28 +52,29 @@ async function tryUpdateSettings() {
     logging('Skip: user canceled.');
     return;
   }
+  if (ans === 'Yes') {
+    await vscode.window.withProgress({
+      location: vscode.ProgressLocation.Notification,
+      title: 'Updating settings...',
+      cancellable: false
+    }, (progress) => {
+      const finish_keys: Array<String> = [];
+      return Promise.all(config_diff.map(async ([key, value]) => {
+        logging('Updating', key, ':', value);
+        try {
+          await current_config.update(key, value, vscode.ConfigurationTarget.Global);
+        } catch (error) { }
 
-  await vscode.window.withProgress({
-    location: vscode.ProgressLocation.Notification,
-    title: 'Updating settings...',
-    cancellable: false
-  }, (progress) => {
-    const finish_keys: Array<String> = [];
-    return Promise.all(config_diff.map(async ([key, value]) => {
-      logging('Updating', key, ':', value);
-      try {
-        await current_config.update(key, value, vscode.ConfigurationTarget.Global);
-      } catch (error) {}
-
-      finish_keys.unshift(key);
-      progress.report({
-        increment: 100 * finish_keys.length / config_diff.length,
-        message: `(${finish_keys.length}/${config_diff.length})` +
-          ` ${finish_keys.join(', ')}`,
-      });
-    }));
-  });
-  logging('Updated all settings.');
+        finish_keys.unshift(key);
+        progress.report({
+          increment: 100 * finish_keys.length / config_diff.length,
+          message: `(${finish_keys.length}/${config_diff.length})` +
+            ` ${finish_keys.join(', ')}`,
+        });
+      }));
+    });
+    logging('Updated all settings.');
+  }
 }
 
 export function activate(context: vscode.ExtensionContext) {
