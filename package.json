@@ -56,15 +56,12 @@
         "bot-man.vs-keybindings",
         "vscode-icons-team.vscode-icons",
         "ms-vscode.cpptools",
-        "dbaeumer.vscode-eslint",
         "ms-python.python",
         "ms-vscode.hexeditor",
         "VisualStudioExptTeam.vscodeintellicode",
         "jakearl.search-editor-apply-changes",
         "sirmspencer.vscode-autohide",
         "fabiospampinato.vscode-commands",
-        "mhutchie.git-graph",
-        "donjayamanne.githistory",
         "maattdd.gitless"
     ],
     "scripts": {

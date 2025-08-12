@@ -1,11 +1,12 @@
 {
     "window.zoomLevel": 0.5,
+    "window.commandCenter": false,
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
     "editor.wrappingIndent": "deepIndent",
     "editor.minimap.enabled": false,
+    "editor.occurrencesHighlight": "multiFile",
     "editor.overviewRulerBorder": false,
-    "editor.stickyScroll.enabled": true,
     "editor.lineNumbers": "off",
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
@@ -56,8 +57,12 @@
     "git.enableSmartCommit": true,
     "git.pruneOnFetch": true,
     "git.mergeEditor": true,
-    "git-graph.repository.fetchAndPrune": true,
-    "git-graph.repository.fetchAndPruneTags": true,
+    "git.ignoreRebaseWarning": true,
+    "scm.graph.badges": "all",
+    "scm.alwaysShowRepositories": true,
+    "diffEditor.maxComputationTime": 0,
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.experimental.useTrueInlineView": true,
     "[markdown]": {
         "editor.quickSuggestions": {
             "other": true,

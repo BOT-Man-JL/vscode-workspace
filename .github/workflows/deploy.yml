@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v5
+    - uses: actions/setup-node@v4
       with:
-        node-version: '14.x'
+        node-version: '20.x'
     - name: Set latest version
       run: |
         export VERSION=`curl https://marketplace.visualstudio.com/items?itemName=bot-man.workspace | grep '"Version":' | sed 's/^.*"Version":"\([^"]*\)".*$/\1/g'`
