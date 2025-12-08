@@ -57,6 +57,8 @@
         "vscode-icons-team.vscode-icons",
         "ms-vscode.cpptools",
         "ms-python.python",
+        "ms-python.black-formatter",
+        "ms-python.isort",
         "ms-vscode.hexeditor",
         "jakearl.search-editor-apply-changes",
         "sirmspencer.vscode-autohide",

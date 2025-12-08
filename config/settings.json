@@ -95,8 +95,19 @@
         "editor.tabSize": 4,
         "editor.rulers": [
             79
-        ]
+        ],
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    "black-formatter.args": [
+        "--line-length",
+        "79"
+    ],
+    "isort.check": true,
+    "isort.severity": {
+        "W": "Warning",
+        "E": "Error"
+    },
+    "isort.args":["--profile", "black"],
     "python.analysis.typeCheckingMode": "standard",
     "gitlens.codeLens.enabled": false,
     "gitlens.statusBar.enabled": false,
