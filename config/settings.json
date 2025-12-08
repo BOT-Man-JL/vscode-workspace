@@ -21,6 +21,7 @@
     "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
     "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.revealDeclaration",
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?·～！￥…（）—【】、；：‘’“”，。《》？",
+    "editor.suggestSelection": "first",
     "workbench.editor.revealIfOpen": true,
     "workbench.colorTheme": "Default Light+",
     "workbench.colorCustomizations": {
@@ -96,8 +97,7 @@
             79
         ]
     },
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.analysis.typeCheckingMode": "standard",
     "gitlens.codeLens.enabled": false,
     "gitlens.statusBar.enabled": false,
     "gitlens.currentLine.enabled": false,
